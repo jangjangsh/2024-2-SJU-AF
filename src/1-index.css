@@ -101,27 +101,29 @@
 }
 
 .button-container button {
-  padding: 0.8rem 5.5rem;
+  padding: 1rem 5rem;
   cursor: pointer;
 
   background-color: rgb(255, 255, 255);
 
   border-radius: 50px;
   border: none; /* 버튼 테두리 없애기 */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgb(245, 245, 245);
 }
 
 .button-container:hover button {
-  background-color: rgb(30, 30, 30);
+  background-color: black;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
-.button-container:hover .circle {
+/* .button-container:hover .circle {
   background-color: rgb(255, 255, 255);
-}
-
+} */
+/* 
 .button-container:hover img {
   filter: brightness(0%);
-}
+} */
 
 .button-container:hover .button-container__title {
   color: white;
@@ -133,7 +135,7 @@
 }
 
 /* 부모 요소 */
-.circle {
+/* .circle {
   width: 28px;
   height: 28px;
 
@@ -143,17 +145,17 @@
   margin-right: 0.5rem;
 
   transition: all 0.1s ease;
-}
+} */
 
 /* .circle:hover {
   background-color: var(--red);
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
 } */
-
-/* 자식 요소 */
+/* 
+자식 요소
 .button-container img {
   width: 70%;
-}
+} */
 
 .button-container__title {
   font-size: 1rem;

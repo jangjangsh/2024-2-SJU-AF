@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans/css/SpoqaHanSansNeo.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 /* 기본 CSS 초기화 */
 * {
@@ -9,21 +9,17 @@
 
 html,
 body {
-  font-family: "Spoqa Han Sans Neo", sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100vh;
   width: 100vw;
   margin: 0;
 }
 
 main {
-  font-family: "Spoqa Han Sans Neo", sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   box-sizing: border-box;
   padding: 1rem;
-}
-
-h1 {
-  font-family: "Spoqa Han Sans Neo", sans-serif !important;
 }
 
 .body-center {
@@ -40,6 +36,7 @@ h1 {
 
 :root {
   --red: #b93234; /* 빨간색 */
+  --gray: rgb(245, 245, 245);
   --gray1: #f5f5f5; /* 밝은 회색 1 */
   --gray2: #717171; /* 진한 회색 2 */
   --cream: #fef8e9; /* 크림색 */
