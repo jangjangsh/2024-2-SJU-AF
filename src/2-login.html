@@ -3,11 +3,57 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" href="reset.css" />
-    <title>물어보세종-로그인</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="2-login.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+    />
+    <title>물어보세종 (로그인 화면)</title>
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+    <div class="login-section column-center">
+      <img src="img/Logo.png" alt="로고" />
+
+      <!-- 아이디, 비밀번호 입력 칸 -->
+      <div class="typing-container column-center">
+        <div class="typing-container__id">
+          <!-- <div class="typing-container__img"> -->
+          <img src="img/Account.png" alt="account" />
+
+          <!-- </div> -->
+
+          <input
+            type="text"
+            id="studentid"
+            name="studentid"
+            placeholder="아이디 입력"
+          />
+        </div>
+
+        <div class="typing-container__pw">
+          <img src="img/Key.png" alt="" />
+          <input
+            type="password"
+            id="studentpw"
+            name="studentpw"
+            placeholder="비밀번호 입력"
+          />
+        </div>
+      </div>
+
+      <!-- 로그인, 회원가입 버튼 -->
+      <div class="button-container column-center">
+        <a href="4-chat.html">
+          <button class="button-container__login">로그인</button>
+        </a>
+        <a href="3-signup.html">
+          <button class="button-container__signup">회원가입</button>
+        </a>
+      </div>
+    </div>
+    <script src="2-login.js"></script>
   </body>
 </html>
