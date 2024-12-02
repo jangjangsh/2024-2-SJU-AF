@@ -104,15 +104,16 @@
             <div class="signup-form__group">
               <div class="form-txt">단과대</div>
               <select class="box-shadow10" id="college" name="college">
-                <option value="humanities">인문과학대학</option>
-                <option value="social_science">사회과학대학</option>
-                <option value="business_economics">경영경제대학</option>
-                <option value="hotel_tourism">호텔관광대학</option>
-                <option value="natural_science">자연과학대학</option>
-                <option value="life_science">생명과학대학</option>
-                <option value="ai_convergence">인공지능융합대학</option>
-                <option value="engineering">공과대학</option>
-                <option value="arts_sports">예체능대학</option>
+                <option value="college-humanities">인문과학대학</option>
+                <option value="college-social_science">사회과학대학</option>
+                <option value="college-business_economics">경영경제대학</option>
+                <option value="college-hotel_tourism">호텔관광대학</option>
+                <option value="college-natural_science">자연과학대학</option>
+                <option value="college-life_science">생명과학대학</option>
+                <option value="college-ai_convergence">인공지능융합대학</option>
+                <option value="college-engineering">공과대학</option>
+                <option value="college-arts_sports">예체능대학</option>
+                <option value="college-software">소프트웨어융합대학</option>
               </select>
             </div>
 
@@ -120,22 +121,36 @@
             <div class="signup-form__group">
               <div class="form-txt">학과</div>
               <select class="box-shadow10" id="major" name="major">
-                <option value="economics">경제학과</option>
-                <option value="datas-cience">데이터사이언스학과</option>
-                <option value="fashion-design">패션디자인학과</option>
+                <option value="" disabled selected>학과를 선택하세요</option>
               </select>
             </div>
 
             <!-- 가입하기 -->
             <div class="submit-button column-center box-shadow30">
-              <button type="submit" name="signin" value="가입하기">
-                가입하기
-              </button>
+              <a href="2-login.html">
+                <button
+                  type="submit"
+                  id="signup-button"
+                  name="signin"
+                  value="가입하기"
+                >
+                  가입하기
+                </button>
+              </a>
+            </div>
+
+            <!-- 팝업창 (모달) -->
+            <div class="success-modal">
+              <div class="modal-content">
+                <h2>회원가입 완료</h2>
+                <p>물어보세종에 오신 걸 환영해요!</p>
+                <button class="modal-button">확인</button>
+              </div>
             </div>
           </form>
         </div>
       </section>
     </main>
-    <script src="3-signup.html"></script>
+    <script src="3-signup.js"></script>
   </body>
 </html>
