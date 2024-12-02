@@ -14,7 +14,6 @@ from langchain.retrievers import EnsembleRetriever
 from langchain_community.retrievers import BM25Retriever
 import argparse
 
-# .env 파일 로드
 load_dotenv()
 
 # parser 설정
@@ -161,7 +160,7 @@ while True:
     # print("\n")
     # print("===" * 20)
     # print(f"[HUMAN ASK]\n{question}\n")
-    print(f"ANSWER:{response}\n")
+    print(f"ANSWER::{response}\n")
 
 
 

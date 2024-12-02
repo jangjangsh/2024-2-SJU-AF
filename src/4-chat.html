@@ -86,44 +86,64 @@
         <div class="chatbot-container">
           <div class="chatbot-container__chatting box-shadow">
             <div class="chatbot-container-main">
-              <div class="chatbot-image">
-                <img src="./img/Logo.png" alt="Logo" />
-              </div>
+              <section class="chatbot-main"></section>
 
-              <div class="bubble1">
-                <div class="speech-bubble speech-bubble-right">
-                  <span class="bubble-text">•••</span>
+              <section class="chatbot-introduce">
+                <div class="chatbot-image">
+                  <img src="./img/Logo.png" alt="Logo" />
                 </div>
-              </div>
-              <div class="bubble2">
-                <div class="speech-bubble speech-bubble-left">
-                  <span class="bubble-text">학술정보원 몇 시까지 열어?</span>
-                </div>
-              </div>
-              <div class="bubble3">
-                <div class="speech-bubble speech-bubble-right">
-                  <span class="bubble-text">AI 센터 위치는 어디야?</span>
-                </div>
-              </div>
 
-              <div class="chatbot-explain-text">
-                세종대와 관련된 내용을 물어봐!
-              </div>
-            </div>
-            <div class="question-input-container">
-              <form action="/ask" method="post" class="question-form">
-                <div class="input-submit">
-                  <input
-                    type="text"
-                    name="question"
-                    placeholder="무엇이든 물어보세요!"
-                    class="question-input"
-                  />
-                  <button type="submit" class="question-submit-button">
-                    전송
+                <div class="bubble1">
+                  <div class="speech-bubble speech-bubble-right">
+                    <span class="bubble-text">•••</span>
+                  </div>
+                </div>
+                <div class="bubble2">
+                  <div class="speech-bubble speech-bubble-left">
+                    <span class="bubble-text">학술정보원 몇 시까지 열어?</span>
+                  </div>
+                </div>
+                <div class="bubble3">
+                  <div class="speech-bubble speech-bubble-right">
+                    <span class="bubble-text">AI 센터 위치는 어디야?</span>
+                  </div>
+                </div>
+                <div class="chatbot-explain-text">
+                  세종대와 관련된 내용을 물어봐!
+                </div>
+              </section>
+
+              <section class="chatbot-footer">
+                <!-- 예상 질문 예시 -->
+                <div class="question-example-container">
+                  <button type="submit" class="question-example">
+                    꿀교양 알려줘
+                  </button>
+                  <button type="submit" class="question-example">
+                    이번학기 수강신청 일정 알려줘
                   </button>
                 </div>
-              </form>
+
+                <!-- 질문입력란 -->
+                <div class="question-input-container">
+                  <form class="question-form">
+                    <div class="input-submit">
+                      <input
+                        type="text"
+                        name="question"
+                        placeholder="무엇이든 물어보세요!"
+                        class="question-input"
+                      />
+                      <button
+                        type="submit"
+                        class="question-submit-button center"
+                      >
+                        전송
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </section>
             </div>
           </div>
         </div>

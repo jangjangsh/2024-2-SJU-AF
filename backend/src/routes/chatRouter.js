@@ -17,8 +17,8 @@ const chatRouter = (pythonProcess) => {
       const message = data.toString();
       console.log(message);
       output += message;
-      if (output.includes("ANSWER:")) {
-        const splittedOutput = output.split(":");
+      if (output.includes("ANSWER::")) {
+        const splittedOutput = output.split("::");
         res.json({ answer: splittedOutput[splittedOutput.length - 1] });
         pythonProcess.stdout.off("data", handleData);
       }
