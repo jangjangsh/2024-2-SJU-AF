@@ -7,11 +7,27 @@
 } */
 /* 이거 내가 추가한 것 같은데 지울게 */
 
+input,
+select {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1rem; /* 동일한 padding */
+  font-size: 16px; /* 동일한 글꼴 크기 */
+  font-weight: 400;
+  line-height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 48px; /* 동일한 높이 강제 설정 */
+  appearance: none; /* 브라우저 기본 스타일 제거 */
+}
+
 /* 로고 */
 header {
   width: 100%;
   border-bottom: 1px solid var(--gray1);
   padding: 1rem 0;
+  position: fixed;
+  background-color: white;
 }
 
 .logo-signup {
@@ -33,15 +49,16 @@ header {
   align-items: center;
   text-align: center;
 
-  padding: 1rem 0;
+  padding-top: 1rem;
   line-height: 40px;
-  margin: 1.25rem;
+  /* margin: 1.25rem; */
 }
 
 .signup-txt h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.05rem;
+  margin-top: 6rem;
   display: flex;
   align-items: center;
   text-align: center;
@@ -52,27 +69,60 @@ header {
   height: 100%;
 }
 
-.signup-form .signup-form__group {
-  /* margin: 2rem 0; */
+.signup-form {
   margin-bottom: 1.5rem;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  gap: 8rem;
+  padding-bottom: 1rem;
+  margin: 2rem 0rem;
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+  /* box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.02); */
+}
+
+.form-container__left,
+.form-container__right {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.signup-form__group {
+  margin: 1.5rem 0rem;
 }
 
 .signup-form .signup-form__group .form-txt {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  margin-left: 0.2rem;
+  margin-bottom: 0.65rem;
+  margin-left: 0.7rem;
 }
 
 select {
-  width: 300px;
-  padding: 0.9rem 0.7rem;
+  width: 280px;
+  /* padding: 15px 1rem; */
   border: none;
   border-radius: 16px;
-  font-size: 0.9rem;
-  color: rgb(150, 150, 150);
+  font-size: 1rem;
+  letter-spacing: 0.02rem;
+  color: rgb(200, 200, 200);
+  appearance: none; /* 기본 화살표 제거 */
+  background-image: url("img/Dropdown2.png");
+
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* 화살표 위치 */
+  background-size: 20px; /* 화살표 크기 */
   /* box-shadow: inset 0 0 0px 1px rgba(0, 0, 1); */
   /* transform: scale(1.02); */
 }
@@ -81,7 +131,10 @@ select:focus {
   box-shadow: 0 0 0px px rgba(0, 0, 0, 0.1);
   /* transform: scale(1.02); */
   outline: none;
-  color: black;
+
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.05s ease;
 }
 
 .box-shadow10 {
@@ -94,19 +147,21 @@ select:focus {
 
 /* 닉네임입력 */
 .signup-form__group input {
-  width: 300px;
-  padding: 0.9rem 1rem;
+  width: 280px;
+  /* padding: 16px 1.2rem; */
 
-  font-size: 0.9rem;
-  letter-spacing: 0.05rem;
+  font-size: 1rem;
+  letter-spacing: 0.02rem;
+  color: rgba(0, 0, 0, 0.5);
 
   border: none;
   outline: none;
   border-radius: 16px;
+  font-weight: 500;
 }
 
 .signup-form__group ::-webkit-input-placeholder {
-  color: rgb(150, 150, 150);
+  color: rgb(200, 200, 200);
 }
 
 input:focus::placeholder {
@@ -116,14 +171,12 @@ input:focus::placeholder {
 
 /* 가입하기버튼 */
 .submit-button button {
-  width: 300px;
-  padding: 0.9rem 0.7rem;
+  width: 150px;
+  padding: 1rem 0.4rem;
   border: none;
-  border-radius: 16px;
+  border-radius: 30px;
   background-color: var(--red);
   color: white;
-
-  margin: 1.5rem 0;
 
   font-size: 1rem;
   font-weight: 600;
