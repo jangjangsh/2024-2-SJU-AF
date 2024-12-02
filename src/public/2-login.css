@@ -76,7 +76,7 @@ input:focus::placeholder {
   /* margin-top: 0.5rem; */
 }
 
-.button-container button {
+button {
   width: 285px; /* 동일한 width 값 */
   padding: 1rem 2.5rem;
 
