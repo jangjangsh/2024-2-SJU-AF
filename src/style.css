@@ -19,7 +19,7 @@ main {
   font-family: "Roboto", sans-serif;
   display: flex;
   box-sizing: border-box;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .body-center {

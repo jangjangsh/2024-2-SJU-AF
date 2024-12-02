@@ -1,5 +1,6 @@
 main {
   height: calc(100vh - 3.5rem); /* 전체 화면에서 상단 여백을 빼서 사용 */
+  padding: 1rem;
 }
 
 .nav-section {

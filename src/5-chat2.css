@@ -1,5 +1,6 @@
 main {
   height: calc(100vh - 3.5rem); /* 전체 화면에서 상단 여백을 빼서 사용 */
+  padding: 1rem;
 }
 
 .nav-section {
@@ -240,7 +241,7 @@ main {
 
 /* 챗봇 말풍선 */
 .chatbot-bubble {
-  background-color: #fff8e7;
+  background-color: var(--gray);
   max-width: 80%;
   margin-left: 0.8rem;
 }
@@ -253,7 +254,7 @@ main {
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-right-color: #fff8e7;
+  border-right-color: var(--gray);
   border-left: 0;
 }
 
@@ -267,19 +268,20 @@ main {
   display: flex;
   align-items: start;
   width: 95%;
-  height: 20px;
+  height: 32px;
   position: relative;
+  left: 0;
   margin-bottom: 0.7rem;
 }
 
 .question-example {
   border: 1px solid #eaeaea;
   border-radius: 30px;
-  background-color: var(--gray1);
+  background-color: #f9f9f9;
   margin-left: 0.1rem;
   margin-right: 0.3rem;
   font-size: 0.8rem;
-  padding: 0.25rem;
+  padding: 0.5rem 0.75rem;
   color: var(--gray2);
 }
 

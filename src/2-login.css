@@ -81,6 +81,7 @@ input:focus::placeholder {
   padding: 1rem 2.5rem;
 
   font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 0.1rem;
 
   border: none;

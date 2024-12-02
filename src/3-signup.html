@@ -11,10 +11,14 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="3-signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+    />
     <title>물어보세종-회원가입</title>
   </head>
 
-  <body class="body-center">
+  <body>
     <!-- 로고, 회원가입txt -->
     <header class="column-center">
       <div class="logo-signup">
@@ -30,6 +34,17 @@
         <!-- 회원가입 정보 받기 -->
         <div class="signup-form">
           <form action="/signup" method="post">
+            <!-- 닉네임 -->
+            <div class="signup-form__group">
+              <div class="form-txt">닉네임</div>
+              <input
+                class="box-shadow10"
+                type="text"
+                name="nickname"
+                placeholder="닉네임을 입력해주세요."
+                required
+              />
+            </div>
             <!-- 재학 여부 -->
             <div class="signup-form__group">
               <div class="form-txt">재학 여부</div>
@@ -69,18 +84,6 @@
                 <option value="datas-cience">데이터사이언스학과</option>
                 <option value="fashion-design">패션디자인학과</option>
               </select>
-            </div>
-
-            <!-- 닉네임 -->
-            <div class="signup-form__group">
-              <div class="form-txt">닉네임</div>
-              <input
-                class="box-shadow10"
-                type="text"
-                name="nickname"
-                placeholder="닉네임을 입력해주세요"
-                required
-              />
             </div>
 
             <!-- 가입하기 -->
