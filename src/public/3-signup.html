@@ -33,7 +33,7 @@
         </div>
         <!-- 회원가입 정보 받기 -->
         <div class="signup-form">
-          <form action="/signup" method="post">
+          <form id="signupForm">
             <!-- 닉네임 -->
             <div class="signup-form__group">
               <div class="form-txt">닉네임</div>
@@ -51,7 +51,7 @@
               <input
                 class="box-shadow10"
                 type="email"
-                name="account-id"
+                name="email"
                 placeholder="아이디를 입력해주세요."
                 required
               />
@@ -62,7 +62,7 @@
               <input
                 class="box-shadow10"
                 type="password"
-                name="account-pw"
+                name="password"
                 placeholder="비밀번호를 입력해주세요."
                 required
               />
@@ -111,6 +111,7 @@
                 <option value="natural_science">자연과학대학</option>
                 <option value="life_science">생명과학대학</option>
                 <option value="ai_convergence">인공지능융합대학</option>
+                <option value="ai_convergence">소프트웨어융합대학</option>
                 <option value="engineering">공과대학</option>
                 <option value="arts_sports">예체능대학</option>
               </select>
@@ -136,6 +137,6 @@
         </div>
       </section>
     </main>
-    <script src="3-signup.html"></script>
+    <script src="3-signup.js"></script>
   </body>
 </html>

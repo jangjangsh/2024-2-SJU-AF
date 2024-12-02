@@ -10,7 +10,7 @@ authRouter.post("/signup", async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password)
-    return response.status(400).json({ message: "회원가입 실패" });
+    return res.status(400).json({ message: "회원가입 실패" });
 
   await User.create({ email, password }); // DB 저장
 
@@ -24,7 +24,7 @@ authRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password)
-    return response.status(400).json({ message: "로그인 실패" });
+    return res.status(400).json({ message: "로그인 실패" });
 
   const foundUser = await User.findOne({ email });
   if (!foundUser)
