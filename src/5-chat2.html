@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="4-chat.css" />
+    <!-- 테스트 코드로 변경 -->
+    <link rel="stylesheet" href="5-chat2.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
@@ -26,7 +27,7 @@
 
     <main>
       <!-- 왼쪽 info, 오른쪽 chatbot -->
-      <div class="chat-section center">
+      <div class="chat-section">
         <div class="info-container">
           <!-- 바로가기 부분 -->
           <div class="info-container__link box-shadow">
@@ -84,32 +85,73 @@
         </div>
 
         <div class="chatbot-container">
-          <div class="chatbot-container__chatting box-shadow">
+          <div class="chatbot-container__chatting column-center box-shadow">
             <div class="chatbot-container-main">
-              <div class="chatbot-image">
-                <img src="./img/Logo.png" alt="Logo" />
-              </div>
-
-              <div class="bubble1">
-                <div class="speech-bubble speech-bubble-right">
-                  <span class="bubble-text">•••</span>
-                </div>
-              </div>
-              <div class="bubble2">
-                <div class="speech-bubble speech-bubble-left">
-                  <span class="bubble-text">학술정보원 몇 시까지 열어?</span>
-                </div>
-              </div>
-              <div class="bubble3">
-                <div class="speech-bubble speech-bubble-right">
-                  <span class="bubble-text">AI 센터 위치는 어디야?</span>
+              <!-- 내 질문 -->
+              <div class="me-question">
+                <div class="chatbot-bubble-group me-bubble">
+                  <span class="me-question-content">
+                    지금 센B110에서 수업 중이야?
+                  </span>
                 </div>
               </div>
 
-              <div class="chatbot-explain-text">
-                세종대와 관련된 내용을 물어봐!
+              <!-- 챗봇 답변 -->
+              <div class="chatbot-answer-container">
+                <div class="chatbot-profile">
+                  <div class="chatbot-profile-img">
+                    <img src="./img/Logo.png" alt="profile" />
+                  </div>
+                </div>
+                <div class="chatbot-answer">
+                  <div class="chatbot-bubble-group chatbot-bubble">
+                    <span class="chatbot-answer-content">
+                      네, 수업 진행 중입니다. 현재 센B110 강의실은 OOO 교수님의
+                      오픈소스SW개론 수업이 13시 30분까지 진행될 예정입니다.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 채팅여러개 보냈을 때 확인용 -->
+              <!-- 내 질문 -->
+              <div class="me-question">
+                <div class="chatbot-bubble-group me-bubble">
+                  <span class="me-question-content">
+                    지금 센B110에서 수업 중이야?
+                  </span>
+                </div>
+              </div>
+
+              <!-- 챗봇 답변 -->
+              <div class="chatbot-answer-container">
+                <div class="chatbot-profile">
+                  <div class="chatbot-profile-img">
+                    <img src="./img/Logo.png" alt="profile" />
+                  </div>
+                </div>
+                <div class="chatbot-answer">
+                  <div class="chatbot-bubble-group chatbot-bubble">
+                    <span class="chatbot-answer-content">
+                      네, 수업 진행 중입니다. 현재 센B110 강의실은 OOO 교수님의
+                      오픈소스SW개론 수업이 13시 30분까지 진행될 예정입니다.
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- 예상 질문 예시 -->
+            <div class="question-example-container">
+              <button type="submit" class="question-example">
+                꿀교양 알려줘
+              </button>
+              <button type="submit" class="question-example">
+                이번학기 수강신청 일정 알려줘
+              </button>
+            </div>
+
+            <!-- 질문입력란 -->
             <div class="question-input-container">
               <form action="/ask" method="post" class="question-form">
                 <div class="input-submit">
@@ -119,13 +161,14 @@
                     placeholder="무엇이든 물어보세요!"
                     class="question-input"
                   />
-                  <button type="submit" class="question-submit-button">
+                  <button type="submit" class="question-submit-button center">
                     전송
                   </button>
                 </div>
               </form>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </main>

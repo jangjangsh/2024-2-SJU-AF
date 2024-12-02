@@ -1,0 +1,120 @@
+main {
+  height: calc(100vh - 3.5rem); /* 전체 화면에서 상단 여백을 빼서 사용 */
+}
+
+.login-section {
+  width: 100%;
+  height: 100%;
+}
+
+.login-section img {
+  width: 100px;
+}
+
+/* @@@ 아이디, 비밀번호 입력 창 @@@ */
+
+.typing-container {
+  margin-top: 2rem;
+}
+
+.typing-container__id,
+.typing-container__pw {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.typing-container img {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  margin: 0 0 0.8rem 1rem;
+  /* color: rgb(200, 200, 200); */
+}
+
+.typing-container input {
+  all: unset;
+  text-align: left;
+
+  /* border: 1px solid rgb(230, 230, 230); */
+
+  font-size: 1rem;
+  background-color: rgb(248, 248, 248);
+  letter-spacing: 0.05rem;
+
+  height: 20px;
+  width: 200px;
+  border-radius: 20px;
+
+  padding: 1rem 2.7rem;
+  margin-bottom: 0.7rem;
+  transition: color 0.01s ease;
+
+  caret-color: transparent; /* 커서 숨김 */
+  outline: none; /* 포커스 시 아웃라인 제거 */
+}
+
+input::placeholder {
+  color: rgb(150, 150, 150);
+}
+
+input:focus::placeholder {
+  color: rgb(248, 248, 248);
+  transition: color 0.1s ease;
+}
+
+.typing-container input:focus {
+  /* border: 1px solid rgb(210, 210, 210); */
+  /* box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1); */
+}
+
+/* 로그인, 회원가입 버튼/ */
+.button-container {
+  /* margin-top: 0.5rem; */
+}
+
+.button-container button {
+  width: 285px; /* 동일한 width 값 */
+  padding: 1rem 2.5rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+
+  border: none;
+  border-radius: 20px;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.button-container__login {
+  background-color: rgb(230, 230, 230);
+  color: white;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.button-container__signup {
+  background-color: rgb(255, 255, 255);
+  color: rgb(180, 180, 180);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.button-container__login:hover {
+  /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); */
+  background-color: var(--red);
+  color: white;
+}
+
+.button-container__signup:hover {
+  background-color: rgb(245, 245, 245);
+  color: rgb(150, 150, 150);
+}
+
+.button-container__img {
+  display: flex;
+}

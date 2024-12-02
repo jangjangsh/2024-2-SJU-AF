@@ -1,0 +1,305 @@
+main {
+  height: calc(100vh - 3.5rem); /* 전체 화면에서 상단 여백을 빼서 사용 */
+  padding: 1rem;
+}
+
+.nav-section {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1.5rem 0 1.5rem;
+
+  width: 100vw;
+}
+.logo {
+  display: flex;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.chat-section {
+  display: flex;
+  height: 100%; /* 화면 전체 높이 */
+  width: 100%; /* 화면 전체 너비 */
+}
+
+/* 내 담당 왼쪽 : info-container */
+.info-container {
+  height: 100%;
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 두 섹션 사이의 간격 */
+}
+
+.info-container__link,
+.info-container__calender {
+  /* 같은 크기로 분배 */
+  flex: 1;
+  padding: 0.7rem 1rem;
+}
+
+/* 상단 바로가기 전체 container */
+.link-container {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between; /* 상하 간격을 균등하게 */
+}
+
+/* 링크 컨테이너 속 링크를 담는 박스 */
+.link-container__elements {
+  height: 100%;
+  padding-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 링크 컨테이너 속 요소들 배치 */
+/* .link-container__box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+/* 링크 컨테이너 속 링크들/ */
+.link-container a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--gray2);
+
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  margin-bottom: 0.6rem;
+
+  white-space: nowrap; /* 텍스트를 한 줄로 표시 */
+  overflow: hidden; /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis; /* 넘치는 부분을 '...'로 표시 */
+
+  background-color: white;
+  border: 1px solid rgb(240, 240, 240);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+
+  transition: all 0.2s ease;
+}
+
+.link-container a:hover {
+  background-color: var(--red);
+  color: white;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--red);
+}
+
+/* 요소 감추기 */
+.link-container a:nth-child(5),
+.link-container a:nth-child(6),
+.link-container a:nth-child(7),
+.link-container a:nth-child(8) {
+  opacity: 0;
+}
+
+/* 하단 캘린터 부분 */
+.info-container img {
+  width: 100%;
+}
+
+/* 캘린더와 타이틀 박스화 */
+.calender-box {
+  width: 100%;
+}
+
+.academic-schedule {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  margin: 0rem 1.1rem;
+}
+
+.academic-schedule__day {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: black;
+
+  padding-left: 0.3rem;
+}
+
+.academic-schedule__content {
+  color: black;
+  font-size: 0.7rem;
+  font-weight: 100;
+
+  padding-left: 0.5rem;
+}
+
+/* ----------------미경수정------------------ */
+/* 미경이 담당 오른쪽 : 챗봇 채팅 부분 */
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* 요소들을 아래로 정렬 */
+
+  height: 100%;
+  width: 82%;
+
+  margin-left: 0.8rem;
+}
+.chatbot-container__chatting {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot-container-main {
+  flex-grow: 1; /* 채팅 부분이 남는 공간을 모두 차지하도록 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 챗봇캐릭터 */
+.chatbot-image {
+  width: 15rem;
+}
+.chatbot-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 이미지 비율을 유지하며 요소에 맞게 조정 */
+  max-width: 100%; /* 부모 요소의 너비를 넘지 않도록 제한 */
+  max-height: 100%; /* 부모 요소의 높이를 넘지 않도록 제한 */
+}
+
+/* 말풍선들 */
+/* 위치를 잘 설정할 방법이 떠오르지 않으니 고민해보겟음 Grid를 사용하면 된다는것같기도 */
+/* 말풍선 위치 */
+/* .bubble1 {
+  position: absolute;
+  top: 390px;
+  left: 450px;
+}
+.bubble2 {
+  position: absolute;
+  top: 480px;
+  left: 780px;
+}
+.bubble3 {
+  position: absolute;
+  top: 520px;
+  left: 320px;
+} */
+
+/* 말풍선 공통 스타일 */
+.speech-bubble {
+  position: relative;
+  padding: 10px 15px;
+  border-radius: 10px;
+  max-width: 250px;
+  font-size: 0.9rem;
+  color: #fff;
+  margin: 10px;
+}
+
+/* 왼쪽세모 말풍선 스타일 */
+.speech-bubble-left {
+  background-color: #000;
+}
+
+.speech-bubble-left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: #000;
+  border-left: 0;
+  margin-top: -5px;
+}
+
+/* 오른쪽세모 말풍선 스타일 */
+.speech-bubble-right {
+  background-color: #000;
+}
+
+.speech-bubble-right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left-color: #000;
+  border-right: 0;
+  margin-top: -5px;
+}
+
+/* 챗봇 이미지 */
+.chatbot-image {
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* 중앙 정렬 */
+}
+.chatbot-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* 이미지 비율을 유지하며 요소에 맞게 조정 */
+}
+
+/* 세종대와 관련된걸 물어봐! */
+.chatbot-explain-text {
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+/* 질문입련란 */
+.question-input-container {
+  width: 95%;
+}
+
+.input-submit {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.question-input {
+  width: 100%;
+  height: 40px;
+
+  border-radius: 30px;
+  border: 1.5px solid var(--gray1);
+
+  padding: 0 0.7rem;
+  color: var(--gray2);
+}
+
+.question-submit-button {
+  position: absolute;
+  right: 10px;
+  top: 15%;
+
+  width: 70px;
+  height: 30px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--gray1);
+
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+}
