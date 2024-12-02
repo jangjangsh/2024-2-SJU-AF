@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /*------------장서현 코드: 달력-------------------*/
   var calendarEl = document.getElementById("calendar");
   var eventInfoEl = document.getElementById("event-info"); // 이벤트 정보를 표시할 요소
+  document.documentElement.style.setProperty("--fc-bg-event-opacity", "0");
 
   const events = [
     {
@@ -282,6 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { title: "1학기 등록", start: "2025-02-18", end: "2025-02-21" },
     { title: "입학식", start: "2025-02-24", end: "2025-02-24" },
   ];
+
   // FullCalendar 초기화
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "dayGridMonth",
@@ -292,8 +294,17 @@ document.addEventListener("DOMContentLoaded", () => {
       center: "title",
       right: "prev,next",
     },
-    events: events,
-
+    events: events.map((event) => {
+      if (event.end) {
+        let endDate = new Date(event.end);
+        endDate.setDate(endDate.getDate() + 1); // end 날짜를 하루 증가시켜, 캘린더에 올바르게 반영하도록 조정
+        return {
+          ...event,
+          end: endDate.toISOString().split("T")[0],
+        };
+      }
+      return event;
+    }),
     dayCellContent: function (arg) {
       const { date } = arg;
       return {
@@ -301,36 +312,81 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     },
 
-    eventClick: function (info) {
-      const eventTitle = info.event.title;
-      const startDate = info.event.start.toISOString().split("T")[0];
-      const endDate = info.event.end
-        ? info.event.end.toISOString().split("T")[0]
-        : startDate;
+    // 특정 날짜 클릭 시 해당 날짜의 모든 이벤트 정보를 표시
+    dateClick: function (info) {
+      const clickedDate = info.dateStr; // 클릭된 날짜 (YYYY-MM-DD 형식)
+      const relatedEvents = events.filter(
+        (event) =>
+          (event.start <= clickedDate && event.end >= clickedDate) ||
+          (event.start === clickedDate && !event.end)
+      );
 
-      eventInfoEl.innerHTML = `<b>${startDate} ~ ${endDate}</b><br> • ${eventTitle}`;
-    },
-    datesSet: function () {
-      const allWeeks = document.querySelectorAll(".fc-daygrid-week");
+      // 클릭한 날짜와 관련된 이벤트 정보를 표시
+      let htmlContent = `<div class="selected-date">${clickedDate}</div>`; // 클릭한 날짜 표시
 
-      allWeeks.forEach((week, index) => {
-        if (index >= 5) {
-          week.style.display = "none";
-        }
-      });
+      if (relatedEvents.length > 0) {
+        htmlContent += relatedEvents
+          .map((event) => `<div class="event-details">• ${event.title}</div>`)
+          .join("");
+      } else {
+        htmlContent += "<div class='no-event'>학사 일정이 없습니다.</div>";
+      }
+
+      // HTML 요소에 삽입
+      eventInfoEl.innerHTML = htmlContent;
     },
+
+    // 이벤트 컨텐츠에 스타일 적용 (이벤트를 날짜 셀 뒤에 겹쳐지도록 설정)
     eventContent: function (arg) {
       return {
-        html: `<div style="position: relative;">
-                    <span style="opacity: 0;">${1}</span>
-                  </div>`,
+        html: `<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(33, 150, 243, 0.2); opacity: 1; z-index: -1;">${arg.event.title}</div>`,
       };
+    },
+    eventDisplay: "background", // 이벤트를 배경 요소로 설정해 겹쳐지도록 합니다.
+
+    // 달력 날짜가 설정될 때 실행, 마지막 주 숨기기
+    views: {
+      dayGridMonth: {
+        type: "dayGrid",
+        duration: { months: 1 },
+        monthMode: true,
+        fixedWeekCount: false, // 필요에 따라 유동적으로 주 수 결정
+      },
     },
   });
 
   calendar.render();
 
-  const headerToolbar = document.querySelector(".fc-header-toolbar");
+  // 이전 달의 날짜와 다음 달의 날짜를 연한 회색으로 표시
+  const style = document.createElement("style");
+  style.innerHTML = `
+    .fc-day-other {
+      color: #c0c0c0; /* 연한 회색 */
+    }
+    .selected-date {
+      display: inline-block;
+      border-left: 2px solid rgba(0,0,0,0.8);
+      padding-left:0.2rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.1rem;
+      // background-color:var(--gray);
+      margin-bottom: 0.4rem;
+    }
+    .event-details {
+      font-size: 0.75rem;
+      color:rgba(0,0,0,0.5);
+      margin-top:0.3rem;
+      letter-spacing: 0.02rem
+    }
+    .no-event {
+      color:rgba(0,0,0,0.5);
+      font-size: 0.75rem;
+      letter-spacing: 0.02rem;
+      margin-top:0.3rem;
+      font-size: 0.8rem;
+    }
+  `;
+  document.head.appendChild(style);
 });
 
 // eventRender: function (info) {

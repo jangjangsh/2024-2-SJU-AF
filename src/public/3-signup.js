@@ -18,7 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }),
       });
       if (!response.ok) throw Error();
-      location.href = "/2-login.html";
+      document.querySelector(".success-modal").style.display = "flex";
+      // 확인 버튼 클릭 시 팝업창 닫고 로그인 페이지로 이동
+      document
+        .querySelector(".modal-button")
+        .addEventListener("click", function () {
+          document.querySelector(".success-modal").style.display = "none"; // 팝업창 숨기기
+          window.location.href = "/2-login.html";
+        });
     } catch (e) {
       alert("회원가입에 실패했습니다.");
     }
