@@ -53,7 +53,6 @@ main {
   margin-bottom: 0.7rem;
   transition: color 0.01s ease;
 
-  caret-color: transparent; /* 커서 숨김 */
   outline: none; /* 포커스 시 아웃라인 제거 */
 }
 
@@ -76,7 +75,7 @@ input:focus::placeholder {
   /* margin-top: 0.5rem; */
 }
 
-.button-container button {
+button {
   width: 285px; /* 동일한 width 값 */
   padding: 1rem 2.5rem;
 
