@@ -40,8 +40,8 @@ main {
 .info-container__link,
 .info-container__calender {
   /* 같은 크기로 분배 */
-  flex: 1;
-  padding: 0.7rem 1rem;
+  flex-grow: 1;
+  padding: 0.7rem 1rem 0 1rem;
 }
 
 .info-container__calender {
@@ -58,7 +58,7 @@ main {
 /* 링크 컨테이너 속 링크를 담는 박스 */
 .link-container__elements {
   height: 100%;
-  padding-top: 0.8rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -74,7 +74,7 @@ main {
 
 /* 링크 컨테이너 속 링크들/ */
 .link-container a {
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
   color: var(--gray2);
 
