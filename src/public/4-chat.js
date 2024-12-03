@@ -305,7 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     },
 
-    // 특정 날짜 클릭 시 해당 날짜의 모든 이벤트 정보를 표시
     dateClick: function (info) {
       const clickedDate = info.dateStr; // 클릭된 날짜 (YYYY-MM-DD 형식)
       const relatedEvents = events.filter(
@@ -327,6 +326,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // HTML 요소에 삽입
       eventInfoEl.innerHTML = htmlContent;
+
+      // 모든 날짜 셀의 선택된 클래스 제거 후 클릭된 날짜 셀에만 클래스 추가
+      document.querySelectorAll(".fc-daygrid-day").forEach((cell) => {
+        cell.classList.remove("selected-date-cell"); // 기존 선택 제거
+      });
+      info.dayEl.classList.add("selected-date-cell"); // 클릭된 날짜에 클래스 추가
     },
 
     // 이벤트 컨텐츠에 스타일 적용 (이벤트를 날짜 셀 뒤에 겹쳐지도록 설정)
@@ -343,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
         type: "dayGrid",
         duration: { months: 1 },
         monthMode: true,
-        fixedWeekCount: false, // 필요에 따라 유동적으로 주 수 결정
+        // fixedWeekCount: false, // 필요에 따라 유동적으로 주 수 결정
       },
     },
   });
@@ -375,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
       color:rgba(0,0,0,0.5);
       font-size: 0.75rem;
       letter-spacing: 0.02rem;
-      margin-top:0.3rem;
+      margin-top:0.2rem;
       font-size: 0.8rem;
     }
   `;
