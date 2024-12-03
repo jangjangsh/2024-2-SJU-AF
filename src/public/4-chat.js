@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     botMessageContainer.innerHTML = `
           <div class="chatbot-profile">
             <div class="chatbot-profile-img">
-              <img src="./img/Logo.png" alt="profile" />
+              <img src="./img/King.jpg" alt="profile" />
             </div>
           </div>
           <div class="chatbot-answer">
