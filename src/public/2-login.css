@@ -87,6 +87,13 @@ input:focus::placeholder {
   border: 1px solid rgb(255, 255, 255);
 }
 
+.button-container__signup {
+  background-color: rgb(255, 255, 255);
+  color: rgb(180, 180, 180);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
 .button-container__login {
   background-color: rgb(230, 230, 230);
   color: white;
@@ -95,17 +102,14 @@ input:focus::placeholder {
   transition: all 0.1s ease;
 }
 
-.button-container__signup {
-  background-color: rgb(255, 255, 255);
-  color: rgb(180, 180, 180);
-  cursor: pointer;
-  transition: all 0.1s ease;
-}
-
-.button-container__login:hover {
-  /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); */
+.button-container__login.active {
   background-color: var(--red);
   color: white;
+}
+
+.button-container__login.active:hover {
+  background-color: var(--red);
+  box-shadow: inset 0px 0px 0px 3rem rgba(0, 0, 0, 0.05);
 }
 
 .button-container__signup:hover {

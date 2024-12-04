@@ -1,5 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
+const loginButton = document.querySelector(".button-container__login");
+const text = document.querySelector("input");
+
+document.addEventListener("keyup", () => {
   const loginForm = document.getElementById("loginForm");
+
+  if (text.value.trim() !== "") {
+    loginButton.disabled = false;
+    loginButton.classList.add("active");
+  } else {
+    loginButton.disabled = true;
+    loginButton.classList.remove("active");
+  }
 
   loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
